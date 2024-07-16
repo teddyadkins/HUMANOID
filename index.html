@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Impact, Charcoal, sans-serif; /* Impact font declaration */
+        }
+
+        .my-block {
+            font-size: 1.5rem; /* Example font size */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .humanoid {
+            font-size: 3rem; /* Larger font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-bottom: 10px; /* Space between humanoid and click-me */
+        }
+
+        .click-me {
+            font-size: 0.8rem; /* Smaller font size */
+            font-family: 'Trispace', sans-serif; /* Trispace font */
+            text-decoration: underline; /* Underline text */
+        }
+
+        .click-me:hover {
+            text-decoration: none; /* Remove underline on hover */
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var humanoid = document.querySelector('.humanoid');
+            humanoid.addEventListener("click", function(event) {
+                event.stopPropagation(); // Prevent body click redirection
+                window.location.href = "home.html";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="my-block">
+        <span class="humanoid">HUMANOID</span>
+        <span class="click-me">*CLICK LOGO</span>
+    </div>
+</body>
+</html>
